@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vehicle.mapper.VehicleImageMapper">
+	<resultMap id="vehicleMap" type="com.vehicle.pojo.VehicleImage">
+		<result column="uuid" jdbcType="VARCHAR" property="uuid"></result>
+		<result column="pic_url" jdbcType="VARCHAR" property="picUrl"></result>
+		<result column="plate_no" jdbcType="VARCHAR" property="plateNo"></result>
+		<result column="pass_time" jdbcType="VARCHAR" property="passTime"></result>
+		<result column="plate_image_path" jdbcType="VARCHAR" property="palteImagePath"></result>
+		<result column="image_path" jdbcType="VARCHAR" property="imagePath"></result>
+		<result column="veh_pic_url_1" jdbcType="VARCHAR" property="vehPicUrl_1"></result>
+		<result column="veh_pic_url_2" jdbcType="VARCHAR" property="vehPicUrl_2"></result>
+		<result column="veh_pic_url_3" jdbcType="VARCHAR" property="vehPicUrl_3"></result>
+		<result column="veh_pic_url_4" jdbcType="VARCHAR" property="vehPicUrl_4"></result>
+		<result column="veh_pic_url_5" jdbcType="VARCHAR" property="vehPicUrl_5"></result>
+		<result column="veh_pic_url_6" jdbcType="VARCHAR" property="vehPicUrl_6"></result>
+		<result column="update_time" jdbcType="TIMESTAMP" property="updateTime"></result>
+	</resultMap>
+	
+	<select id="selectVehicleImage" parameterType="java.lang.String" resultMap="vehicleMap">
+		select uuid, pic_url, plate_no, pass_time, plate_image_path, image_path, veh_pic_url_1, veh_pic_url_2, veh_pic_url_3, veh_pic_url_4, veh_pic_url_5, veh_pic_url_6, update_time from vehicle_pass_pic_attr where uuid = #{id} 
+	</select>
+
+</mapper>
